@@ -4,7 +4,6 @@ export class HomePage {
     private readonly url: string = "/";
     public readonly pageBody: Locator;
     public readonly freeOpenSourceSpatialDiv: Locator;
-    public readonly startReadingLink: Locator;
     public readonly qgisSupportersHeading: Locator;
     public readonly supportersGridDiv: Locator;
     public readonly addYourLogoHereText: Locator;
@@ -13,8 +12,8 @@ export class HomePage {
 
     public readonly textList: string[] = [
         "Free and Open Source",
-        "QGIS Blog",
-        "Your go-to source for the latest posts and updates related to QGIS",
+        "QGIS.org Blog",
+        "Official news and announcements from the QGIS project.",
     ];
 
     constructor(public readonly page: Page) {
@@ -23,8 +22,6 @@ export class HomePage {
             .locator("div")
             .filter({ hasText: "Free and open source" })
             .first();
-        this.startReadingLink = this.page
-            .getByRole('link', { name: 'Start Reading' });
         this.qgisSupportersHeading = this.page.getByRole("heading", {
             name: "QGIS sustaining members",
         });
