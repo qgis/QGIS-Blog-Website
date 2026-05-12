@@ -59,14 +59,17 @@
 
       # Homepage
       check_status "/" "200" "Homepage returns HTTP 200"
-      check_content "/" "QGIS Blog Website" "Homepage has site title"
-      check_content "/" "Your go-to source for the latest posts and updates related to QGIS from the community." "Homepage has tagline"
+      check_content "/" "QGIS.org Blog" "Homepage has site title"
+      check_content "/" "Official news and announcements from the QGIS project." "Homepage has subtitle"
+      check_content "/" "QGIS sustaining members" "Homepage has sustaining members section"
 
-      # Key section pages
-      check_status "/posts/" "200" "Posts page returns HTTP 200"
-      check_content "/posts/" "All Posts" "Posts page has expected content"
+      # Author pages
+      check_status "/author/underdark/" "200" "Author page (Anita Graser) returns HTTP 200"
+      check_content "/author/underdark/" "Anita Graser" "Author page has author name"
 
-      check_status "/subscribers/anita_graser/" "200" "Subscriber page returns HTTP 200"
+      # Category pages
+      check_status "/category/qgis-release-announcements/" "200" "Category page returns HTTP 200"
+      check_content "/category/qgis-release-announcements/" "QGIS Release Announcements" "Category page has expected heading"
 
       # 404 handling
       check_status "/this-page-does-not-exist/" "404" "Non-existent path returns HTTP 404"
