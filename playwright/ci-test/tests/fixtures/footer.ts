@@ -16,8 +16,8 @@ export class Footer {
     constructor(public readonly page: Page) {
         this.banner = this.page.getByRole("contentinfo");
         this.liElement = this.page.locator("li");
-        this.projectList = this.liElement.filter({ hasText: "QGIS Blog"}).first();
-        this.communityList = this.liElement.filter({ hasText: "All Posts" });
+        this.projectList = this.liElement.filter({ hasText: "Case studies" }).first();
+        this.communityList = this.liElement.filter({ hasText: "Get involved" }).first();
         this.downloadLink = this.banner
             .locator("div")
             .filter({ hasText: "Download" })
