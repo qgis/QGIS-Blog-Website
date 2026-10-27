@@ -3,7 +3,7 @@ title: "Anita Graser receives the 2020 Sol Katz Award"
 date: "2020-09-20T16:09:53+00:00"
 draft: false
 authors: ["mbernasocchi"]
-categories: ["QGIS Board"]
+categories: ["Board"]
 featured_image: "solkatz2020.jpg"
 ---
 

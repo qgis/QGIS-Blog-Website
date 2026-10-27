@@ -3,7 +3,7 @@ title: "Announcing the release of QGIS 2.12"
 date: "2015-10-30T14:58:26+00:00"
 draft: false
 authors: ["timlinux"]
-categories: ["QGIS Release Announcements"]
+categories: ["Release Announcements"]
 ---
 
 <p><a href="3648539707d0789903fdfedac3705584f12fa6ac.png"><img loading="lazy" class="is-block mx-auto" src="3648539707d0789903fdfedac3705584f12fa6ac.png" alt="3648539707d0789903fdfedac3705584f12fa6ac" width="600" height="287" srcset="3648539707d0789903fdfedac3705584f12fa6ac.png 600w, 3648539707d0789903fdfedac3705584f12fa6ac.png 150w, 3648539707d0789903fdfedac3705584f12fa6ac.png 300w" sizes="(max-width: 600px) 100vw, 600px" /></a><br />

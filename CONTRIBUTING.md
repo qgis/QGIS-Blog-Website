@@ -167,7 +167,7 @@ title: "Your Post Title"
 date: "2026-04-17T10:00:00+00:00"
 draft: false
 authors: ["your-author-slug"]
-categories: ["QGIS Release Announcements"]
+categories: ["Release Announcements"]
 tags: ["qgis", "release"]
 featured_image: "featured.png"
 ---
@@ -228,7 +228,7 @@ title: "QGIS 4.1 is Released"
 date: "2026-06-01T09:00:00+00:00"
 draft: false
 authors: ["timlinux"]
-categories: ["QGIS Release Announcements"]
+categories: ["Release Announcements"]
 featured_image: "featured.png"
 ---
 
