@@ -133,3 +133,78 @@ def is_valid_svg(svg_filename):
         return True  # No error means it's valid
     except ET.ParseError:
         return False  # If parsing fails, it's invalid
+
+
+def cap_width_in_place(image_filename, max_width=1600, quality=85):
+    """Shrink an image in place if it is wider than max_width, keeping aspect ratio.
+
+    Unlike make_thumbnail(), which writes a separate derivative, this is for
+    blog post images where there is only one copy and it should just not be
+    needlessly huge.
+
+    Returns True if the file was resized, False if it was already narrow
+    enough or missing.
+    """
+    if not os.path.exists(image_filename):
+        print(f'File not found: {image_filename}')
+        return False
+
+    with Image.open(image_filename) as img:
+        width, height = img.size
+        if width <= max_width:
+            return False
+
+        new_width = max_width
+        new_height = max(1, round(height * max_width / width))
+        resized = img.resize((new_width, new_height), Image.LANCZOS)
+
+        file_format = image_filename.split('.')[-1].upper()
+        if file_format == 'JPG':
+            file_format = 'JPEG'
+        if file_format == 'JPEG' and resized.mode in ('RGBA', 'P'):
+            resized = resized.convert('RGB')
+
+        resized.save(
+            image_filename,
+            format=file_format,
+            optimize=True,
+            quality=quality,
+        )
+    return True
+
+
+if __name__ == '__main__':
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description=(
+            'Cap the width of, and convert to WebP, every image in a blog '
+            'post folder. Matches the "Optimising Images" step described '
+            'in CONTRIBUTING.md.'
+        )
+    )
+    parser.add_argument('folder', help='Post folder containing images to optimise, e.g. content/posts/your-post-slug/')
+    parser.add_argument('--max-width', type=int, default=1600, help='Maximum width in pixels (default: 1600)')
+    args = parser.parse_args()
+
+    if not os.path.isdir(args.folder):
+        raise SystemExit(f'Not a directory: {args.folder}')
+
+    convertible = {'.png', '.jpg', '.jpeg', '.tiff'}
+    optimisable = convertible | {'.webp'}
+
+    for name in sorted(os.listdir(args.folder)):
+        path = os.path.join(args.folder, name)
+        ext = os.path.splitext(name)[1].lower()
+        if not os.path.isfile(path) or ext not in optimisable:
+            continue
+        if not is_valid_image(path):
+            continue
+
+        cap_width_in_place(path, max_width=args.max_width)
+
+        if ext in convertible:
+            webp_path = convert_to_webp(path, replace=True)
+            print(f'optimised {name} -> {os.path.basename(webp_path)}')
+        else:
+            print(f'optimised {name}')
