@@ -56,3 +56,10 @@ hugo-run-dev: ## Run the server at localhost:1313 with hugo
 	@echo "Building site in development"
 	@echo "------------------------------------------------------------------"
 	hugo server --config config.toml,config/config.dev.toml
+
+lint-posts: ## Validate front matter and image refs for changed posts (ARGS=--all for every post)
+	python3 scripts/validate_posts.py $(ARGS)
+
+precommit: lint-posts ## Run local checks before committing: post validation + a draft-inclusive Hugo build
+	hugo --config config.toml -D --gc --quiet
+	@echo "✅ precommit checks passed"
