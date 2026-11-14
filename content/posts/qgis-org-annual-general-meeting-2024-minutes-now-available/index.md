@@ -3,7 +3,7 @@ title: "QGIS.ORG Annual General Meeting 2024 – Minutes Now Available"
 date: "2025-03-06T19:36:21+00:00"
 draft: false
 authors: ["underdark"]
-categories: ["Uncategorized"]
+categories: ["Board"]
 featured_image: "/wp-content/uploads/2017/01/qgis-icon_60px.png"
 ---
 
