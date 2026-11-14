@@ -3,7 +3,7 @@ title: "Where is QGIS 4.4.0?"
 date: "2026-11-04T12:28:21+00:00"
 draft: false
 authors: ["timlinux"]
-categories: ["Releases"]
+categories: ["Public Service Announcement"]
 featured_image: "roadmap.png"
 ---
 

@@ -3,7 +3,7 @@ title: "QGIS User Conference 2026 brings open source to new heights in the Swiss
 date: "2026-10-13T11:10:15+00:00"
 draft: false
 authors: ["timlinux"]
-categories: ["Uncategorized"]
+categories: ["User Conference"]
 ---
 
 <figure><a href="conference_group_picture.jpg"><img loading="lazy" width="1024" height="682" src="conference_group_picture.jpg" alt="" srcset="conference_group_picture.jpg 1024w, conference_group_picture.jpg 2048w, conference_group_picture.jpg 150w, conference_group_picture.jpg 300w, conference_group_picture.jpg 768w, conference_group_picture.jpg 1440w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></a></figure>

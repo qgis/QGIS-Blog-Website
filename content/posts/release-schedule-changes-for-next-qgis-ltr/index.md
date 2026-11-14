@@ -3,7 +3,7 @@ title: "Release schedule changes for next QGIS LTR"
 date: "2026-10-03T14:25:46+00:00"
 draft: false
 authors: ["timlinux"]
-categories: ["Uncategorized"]
+categories: ["Public Service Announcement"]
 ---
 
 <p>Dear QGIS community<br></p>
